@@ -30,6 +30,7 @@ pipeline {
 			sh 'git config --global user.name "tung"'
                         
 			sh 'git config --global user.email "tungdt1809@gmail.com"'
+			sh 'git add .'
 			sh 'git commit -m "changed README"'
 			sh 'git push origin main'
 		
