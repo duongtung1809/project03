@@ -2,19 +2,37 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Clone') {
             steps {
-                echo 'Building..'
+                echo 'clone git..'
+                script {
+                    git 'https://github.com/duongtung1809/project03.git'                    
+                }
             }
         }
-        stage('Test') {
+        stage('Change') {
             steps {
-                echo 'Testing..'
+                echo 'modify data..'
+		script{
+			sh '''cd project03/ 
+			cat >> README.md << "EOF"
+		        changed
+			EOF
+			'''
+			
+		}
             }
         }
-        stage('Deploy') {
+        stage('Push') {
             steps {
-                echo 'Deploying....'
+                echo 'git push....'		
+		sripts{
+			sh 'git add README.md'
+			sh 'git commit -m "changed README" '
+			sh 'git push origin main'
+			sh 'tungdt1809@gmail.com'
+			sh 'tung18092000'
+		}
             }
         }
     }
