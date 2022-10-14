@@ -28,7 +28,7 @@ pipeline {
 		sripts{
 			git branch: 'main', credentialsId: 'github-id', url: 'https://github.com/duongtung1809/project03.git'
 			sh 'git config --global user.name "tung"'
-                        git config --global user.email "tungdt1809@gmail.com"
+                        
 			sh 'git config --global user.email "tungdt1809@gmail.com"'
 			sh 'git commit -m "changed README" '
 			sh 'git push origin main'
