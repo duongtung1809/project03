@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'clone git..'
                 script {
-                    	git branch: '.*main', url: 'https://github.com/duongtung1809/project03.git'                    
+                    	sh 'git fetch --all'                    
                 }
             }
         }
