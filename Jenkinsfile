@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'clone git..'
                 script {
-                    	sh 'git fetch --all'                    
+                    	sh 'git pull origin main'                    
                 }
             }
         }
