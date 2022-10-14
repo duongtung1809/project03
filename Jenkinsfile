@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'clone git..'
                 script {
-                    git 'https://github.com/duongtung1809/project03.git'                    
+                    	git 'https://github.com/duongtung1809/project03.git'                    
                 }
             }
         }
