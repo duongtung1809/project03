@@ -14,8 +14,7 @@ pipeline {
             steps {
                 echo 'modify data..'
 		script{
-			sh '''cd project03/ 
-			cat >> README.md << "EOF"
+			sh '''cat >> README.md << "EOF"
 		        changed
 			EOF
 			'''
