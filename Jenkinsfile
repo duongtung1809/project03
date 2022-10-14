@@ -26,11 +26,12 @@ pipeline {
             steps {
                 echo 'git push....'		
 		sripts{
+			git config --global user.name "tung"
+                        git config --global user.email "tungdt1809@gmail.com"
 			sh 'git add README.md'
 			sh 'git commit -m "changed README" '
 			sh 'git push origin main'
-			sh 'tungdt1809@gmail.com'
-			sh 'tung18092000'
+		
 		}
             }
         }
