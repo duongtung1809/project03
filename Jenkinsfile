@@ -30,7 +30,7 @@ pipeline {
         stage('Push') {
             steps {
 		withCredentials([usernamePassword(credentialsId: 'github-id', usernameVariable: 'username',passwordVariable: 'password')]){
-               		sh 'git push http://$username:$password@github.com:duongtung1809/project03.git'		
+               		sh 'git push origin main http://$username:$password@github.com:duongtung1809/project03.git'		
             }
         }
     }
