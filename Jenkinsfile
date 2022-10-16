@@ -22,7 +22,7 @@ pipeline {
 			sh 'git config --global user.email "tungdt1809@gmail.com"'
 			sh 'git add .'
 			sh 'git commit -m "changed README"'
-			sh 'git remote add origin https://github.com/duongtung1809/project03.git'
+			
 			
 		}
             }
