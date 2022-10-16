@@ -18,26 +18,21 @@ pipeline {
 		        changed
 			EOF
 			'''
+			sh 'git config --global user.name "tung"'
+			sh 'git config --global user.email "tungdt1809@gmail.com"'
+			sh 'git add .'
+			sh 'git commit -m "changed README"'
+			sh 'git remote add origin https://tungdt1809:tung18092000@github.com/tungdt1809/project03.git'
 			
 		}
             }
         }
         stage('Push') {
             steps {
-		withCredentials([usernamePassword(credentialsId: 'github-id',
-                 usernameVariable: 'username',
-                 passwordVariable: 'password')]){
-                echo 'git push....'		
-		script{
-			
-			sh 'git config --global user.name "tung"'
-			sh 'git config --global user.email "tungdt1809@gmail.com"'
-			sh 'git add .'
-			sh 'git commit -m "changed README"'
-			sh 'git remote add origin https://tungdt1809:tung18092000@github.com/tungdt1809/project03.git'
-			sh 'git push http://$username:$password@github.com:duongtung1809/project03.git'
+		withCredentials([usernamePassword(credentialsId: 'github-id', usernameVariable: 'username',passwordVariable: 'password')]){
+               		sh 'git push http://$username:$password@github.com:duongtung1809/project03.git'
 		
-		}
+		
             }
         }
     }
